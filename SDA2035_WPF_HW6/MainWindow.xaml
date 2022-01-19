@@ -1,0 +1,44 @@
+﻿<Window x:Class="SDA2035_WPF_HW6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SDA2035_WPF_HW6"
+        mc:Ignorable="d"
+        Title="WeatherInfoConcept" Height="480" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Padding="5">
+            <Image x:Name="im_Skystatus" Height="84"/>
+        </Border>
+        <Border Grid.Row="1" Padding="5">
+            <Image x:Name="im_Temperature" Height="84"/>
+        </Border>
+        <Border Grid.Row="2" Padding="5">
+            <Image x:Name="im_Wind" Source="Images/windangle.jpg" Height="84"/>
+        </Border>
+        <Border Grid.Row="3" Padding="5">
+            <Image x:Name="im_WindDirection" Source="Images/windvelocity.jpg" Height="84"/>
+        </Border>
+        <Label Grid.Column="1" Grid.Row="0" Content="Осадки:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Comic Sans MS"/>
+        <Label Grid.Column="1" Grid.Row="1" Content="Температура:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Comic Sans MS"/>
+        <Label Grid.Column="1" Grid.Row="2" Content="Направление ветра:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Comic Sans MS"/>
+        <Label Grid.Column="1" Grid.Row="3" Content="Скорость ветра:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Comic Sans MS"/>
+        <TextBox Grid.Column="2" Grid.Row="0" IsReadOnly="True" x:Name="tb_Skystatus" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="{x:Null}"/>
+        <TextBox Grid.Column="2" Grid.Row="1" IsReadOnly="True" x:Name="tb_Temperature" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="{x:Null}"/>
+        <TextBox Grid.Column="2" Grid.Row="2" IsReadOnly="True" x:Name="tb_WindAngle" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="{x:Null}" />
+        <TextBox Grid.Column="2" Grid.Row="3" IsReadOnly="True" x:Name="tb_WindSpeed" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="{x:Null}"/>
+        <Button x:Name="ButtonWeather" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Margin="5" Padding="5" Content="Сгенерировать новую погоду!" Click="ButtonWeather_Click"/>
+    </Grid>
+</Window>
